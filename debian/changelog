@@ -1,0 +1,220 @@
+testresources (2.0.1-2) unstable; urgency=medium
+
+  * Uploading to unstable.
+
+ -- Thomas Goirand <zigo@debian.org>  Fri, 08 May 2020 12:08:01 +0200
+
+testresources (2.0.1-1) experimental; urgency=medium
+
+  * New upstream release.
+  * debhelper-compat (= 11).
+  * Standards-Version: 4.5.0.
+
+ -- Thomas Goirand <zigo@debian.org>  Tue, 07 Apr 2020 14:05:44 +0200
+
+testresources (2.0.0-3) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * d/control: Use team+openstack@tracker.debian.org as maintainer
+  * Use debhelper-compat instead of debian/compat.
+
+  [ Mattia Rizzolo ]
+  * Remove Robert Collins from uploader, as he has retired.  Closes: #920505
+
+  [ Sandro Tosi ]
+  * Drop python2 support; Closes: #938653
+
+ -- Sandro Tosi <morph@debian.org>  Sun, 05 Jan 2020 14:02:41 -0500
+
+testresources (2.0.0-2) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * d/control: Fix wrong Vcs-*
+
+  [ Thomas Goirand ]
+  * Add missing dh-python build-depends.
+
+ -- Thomas Goirand <zigo@debian.org>  Mon, 02 Apr 2018 16:55:00 +0200
+
+testresources (2.0.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Some clean-up in debian/rules.
+  * VCS URLs now point to salsa.
+  * Ran wrap-and-sort -bast.
+  * Standards-Version is now 4.1.3.
+
+ -- Thomas Goirand <zigo@debian.org>  Sun, 11 Feb 2018 09:06:12 +0100
+
+testresources (1.0.0-4) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * Bumped debhelper compat version to 10
+
+  [ Thomas Goirand ]
+  * Added missing runtime depends on python-pbr (Closes: #842341).
+
+ -- Thomas Goirand <zigo@debian.org>  Sun, 18 Dec 2016 11:36:29 +0100
+
+testresources (1.0.0-3) unstable; urgency=medium
+
+  * d/s/options: extend-diff-ignore of .gitreview
+  * d/control: Use correct branch in Vcs-* fields
+
+ -- Ondřej Nový <onovy@debian.org>  Mon, 26 Sep 2016 19:18:11 +0200
+
+testresources (1.0.0-2) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * Fixed VCS URLs (https).
+  * d/rules: Changed UPSTREAM_GIT protocol to https
+
+  [ Thomas Goirand ]
+  * Removing testBasicSortTests() instead of excluding it with a nosetest
+    parameter (Closes: #834964).
+  * Updated VCS URLs to use OpenStack Gerrit.
+  * Added a .gitreview file.
+  * Standards-Version: 3.9.8 (no change).
+  * Fixed debian/copyright ordering.
+
+ -- Thomas Goirand <zigo@debian.org>  Sun, 11 Sep 2016 18:36:57 +0200
+
+testresources (1.0.0-1) unstable; urgency=medium
+
+  * New upstream release:
+    - Fixes FTBFS in Sid (Closes: #808688)
+  * Switched to git tag packaging workflow.
+  * Added export OSLO_PACKAGE_VERSION for pbr.
+  * watch file now using github tag.
+  * ran wrap-and-sort -t -a
+  * Standards-Version is now 3.9.6 (no change)
+  * Using -v flag when calling nosetests{3,}
+  * Do not run undeterministic test:
+    - test_optimising_test_suite.TestGraphStuff.testBasicSortTests
+  * Removed reference to lib/testresources/tests/TestUtil.py in
+    debian/copyright (the file doesn't exist upstream anymore).
+
+ -- Thomas Goirand <zigo@debian.org>  Wed, 23 Dec 2015 14:59:37 +0000
+
+testresources (0.2.7-4) unstable; urgency=medium
+
+  * Drops useless build-depends on python-docutils (Closes: #635275).
+
+ -- Thomas Goirand <zigo@debian.org>  Sat, 19 Apr 2014 18:45:55 +0800
+
+testresources (0.2.7-3) unstable; urgency=medium
+
+  * Correct debian/copyright (Closes: #742620).
+  * Removed now useless Conflict / Replaces.
+
+ -- Thomas Goirand <zigo@debian.org>  Sat, 19 Apr 2014 09:56:11 +0800
+
+testresources (0.2.7-2) unstable; urgency=medium
+
+  * Sets PKG OpenStack <openstack-devel@lists.alioth.debian.org> as maintainer,
+    and Robert Collins and myself as uploader.
+  * Bumps compat and debhelper to version 9.
+  * Ran wrap-and-sort.
+  * Using dh_python{2,3} and debhelper short style instead of CDBS and the now
+    deprecated python-support.
+  * Added Python 3 support.
+  * Bump Standards-Version to 3.9.5
+  * Added Vcs and Homepage fields.
+  * debian/copyright in parseable format 1.0.
+  * Switched to 3.0 (quilt) format, and added extend-diff-ignore =
+    "^[^/]*[.]egg-info/" in debian/source/options.
+  * Added a watch file (tracking version on pypi).
+  * Runs nosetests / nosetests3 on build.
+
+ -- Thomas Goirand <zigo@debian.org>  Mon, 24 Mar 2014 19:01:35 +0800
+
+testresources (0.2.7-1) unstable; urgency=low
+
+  * New upstream release
+  * Build-depend on python-setuptools and python-fixtures
+  * Bump Standards-Version to 3.9.4
+
+ -- Free Ekanayaka <freee@debian.org>  Thu, 20 Jun 2013 09:57:19 +0200
+
+testresources (0.2.4-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Robert Collins <robertc@robertcollins.net>  Sat, 27 Feb 2010 10:04:22 +1100
+
+testresources (0.2.3-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Robert Collins <robertc@robertcollins.net>  Sun, 24 Jan 2010 15:53:11 +1100
+
+testresources (0.2.2-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Robert Collins <robertc@robertcollins.net>  Tue, 05 Jan 2010 17:05:34 +1100
+
+testresources (0.2.1-1) unstable; urgency=low
+
+  * New upstream release. (Closes: #560567)
+
+ -- Robert Collins <robertc@robertcollins.net>  Sat, 12 Dec 2009 23:14:29 +1100
+
+testresources (0.2-1) unstable; urgency=low
+
+  * Incorporate Ubuntu uploads and Debian NMU's.
+  * Convert CDBS patch to merge from trunk.
+
+ -- Robert Collins <robertc@robertcollins.net>  Sun, 20 Sep 2009 17:19:22 +1000
+
+testresources (0.2-0ubuntu2) karmic; urgency=low
+
+  [ Elliot Murphy ]
+  * Fix a crash with tearing down test suites when the result is not
+    available. (Closes: #409405)
+
+  [ Alessio Treglia ]
+  * Bump Standards to 3.8.3:
+    - Add ${misc:Depends} macro to Depends field.
+  * Bump debhelper,cdbs build-dependencies (as per Python New policy).
+
+ -- Elliot Murphy (personal) <elliot@ubuntu.com>  Tue, 18 Aug 2009 14:55:07 +0200
+
+testresources (0.2-0ubuntu1) karmic; urgency=low
+
+  [ Elliot Murphy ]
+  * New upstream release with many bugfixes (Closes: #406413).
+
+  [ James Westby ]
+  * Add python-testtools to Build-Depends-Indep as it is needed by the
+    testsuite.
+
+ -- Elliot Murphy (personal) <elliot.murphy@gmail.com>  Wed, 29 Jul 2009 10:45:34 -0400
+
+testresources (0.1-1.2) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Update for new python policy (Closes: #380970).
+  * Run make check instead of ./test_all.py (Closes: #394239).
+  * Move from section devel to section python.
+  * Clean up package description to make lintian happy.
+  * Remove spurios debian/NEWS file.
+  * Bump Standards Version to 3.7.3. (No changes needed).
+
+ -- Barry deFreese <bddebian@comcast.net>  Wed, 23 Jan 2008 17:22:42 -0500
+
+testresources (0.1-1.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * setup.py, test_all.py: Use python2.4 as the interpreter.
+    Closes: #358403.
+  * Move build dependencies used in the clean target to Build-Depends.
+  * Build depend on debhelper (>= 5) since we use v5 mode.
+
+ -- Matej Vela <vela@debian.org>  Fri, 19 May 2006 12:58:19 -0500
+
+testresources (0.1-1) unstable; urgency=low
+
+  * Initial release. Closes: #353378
+
+ -- Robert Collins <robertc@robertcollins.net>  Wed, 15 Feb 2006 12:36:57 +1100
