@@ -1,1 +1,16 @@
-.pc/
+TAGS
+tags
+lib/pyunit3k
+lib/testtools
+__pycache__
+./dist
+./MANIFEST
+*~
+.eggs
+.*.swp
+AUTHORS
+ChangeLog
+dist/
+testresources.egg-info/
+.tox
+*.pyc

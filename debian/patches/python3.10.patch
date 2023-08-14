@@ -1,0 +1,39 @@
+From: Athos Ribeiro <athos.ribeiro@canonical.com>
+Date: Thu, 9 Dec 2021 17:45:47 -0400
+Subject: Use MutableSet collections.abc if available
+
+Python 3.10 removed the aliases to collections.abc from the collections
+module. See [1] for reference.
+
+[1] https://docs.python.org/3/whatsnew/3.10.html#removed
+
+Signed-off-by: Athos Ribeiro <athos.ribeiro@canonical.com>
+---
+ testresources/__init__.py | 7 +++++--
+ 1 file changed, 5 insertions(+), 2 deletions(-)
+
+diff --git a/testresources/__init__.py b/testresources/__init__.py
+index 26363dd..c1a2ad0 100644
+--- a/testresources/__init__.py
++++ b/testresources/__init__.py
+@@ -20,7 +20,10 @@
+ import heapq
+ import inspect
+ import unittest
+-import collections
++try:
++    from collections.abc import MutableSet
++except ImportError:
++    from collections import MutableSet
+ try:
+     import unittest2
+ except ImportError:
+@@ -192,7 +195,7 @@ def _strongly_connected_components(graph, no_resources):
+     return partitions
+ 
+ 
+-class _OrderedSet(collections.MutableSet):
++class _OrderedSet(MutableSet):
+     """This is taken from the OrderedSet recipe link in the Python 2 docs.
+ 
+     See:
