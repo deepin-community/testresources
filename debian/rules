@@ -12,3 +12,10 @@ override_dh_auto_install:
 override_dh_clean:
 	dh_clean
 	rm -rf build
+
+override_dh_auto_test:
+ifeq (,$(findstring nocheck, $(DEB_BUILD_OPTIONS)))
+	set -ex ; for i in $(PYTHON3S) ; do \
+		python$$i -m testtools.run discover ; \
+	done
+endif
