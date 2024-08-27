@@ -1,2 +1,3 @@
 remove-non-deterministic-ftbfs-testBasicSortTests.patch
 python3.10.patch
+python3.12.patch

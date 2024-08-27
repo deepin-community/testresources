@@ -1,0 +1,35 @@
+Description: Refactor failIf to assertFalse for Python 3.12 Compatibility
+ This commit replaces deprecated failIf calls with assertFalse in the
+ test_resourced_test_case.py file. The failIf method was removed in
+ Python 3.12 [1-3].
+ .
+ [1] https://docs.python.org/3.12/whatsnew/3.12.html#removed
+ [2] https://github.com/python/cpython/issues/89325
+ [3] https://github.com/python/cpython/pull/28268
+Author: Petr Vaněk <arkamar@atlas.cz>
+Origin: upstream, https://github.com/testing-cabal/testresources/pull/15
+Bug: https://launchpad.net/bugs/2045302
+Bug-Ubuntu: https://launchpad.net/bugs/2045302
+Bug-Debian: https://bugs.debian.org/1056533
+Applied-Upstream: https://github.com/testing-cabal/testresources/commit/7bb62a13fa1d28717c10f3152b5e8ea479c8e9d2
+Last-Update: 2023-11-30
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/testresources/tests/test_resourced_test_case.py
++++ b/testresources/tests/test_resourced_test_case.py
+@@ -129,7 +129,7 @@
+         self.resourced_case.resources = [("foo", self.resource_manager)]
+         self.resourced_case.setUpResources()
+         self.resourced_case.tearDownResources()
+-        self.failIf(hasattr(self.resourced_case, "foo"))
++        self.assertFalse(hasattr(self.resourced_case, "foo"))
+ 
+     def testTearDownResourcesStopsUsingResource(self):
+         # tearDownResources records that there is one less use of each
+@@ -158,5 +158,5 @@
+         self.assertEqual(self.resourced_case.foo, self.resource)
+         self.assertEqual(self.resource_manager._uses, 1)
+         self.resourced_case.tearDown()
+-        self.failIf(hasattr(self.resourced_case, "foo"))
++        self.assertFalse(hasattr(self.resourced_case, "foo"))
+         self.assertEqual(self.resource_manager._uses, 0)
